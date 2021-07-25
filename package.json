@@ -1,0 +1,38 @@
+{
+  "name": "create-stencil-starter-pack",
+  "version": "0.0.1",
+  "description": "Quickly create a new project with: Stencil, Storybook, Prettier, Eslint, Cypress.  You only have to worry about developing: npm init stencil",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build.tsc": "tsc",
+    "build.bundle": "rollup -c",
+    "minify": "terser --compress --mangle --toplevel --output index.js -- index.js",
+    "build": "npm run build.tsc && npm run build.bundle && npm run minify",
+    "build.dev": "npm run build.tsc && npm run build.bundle",
+    "dev": "npm run build.dev && npm start",
+    "version": "npm build"
+  },
+  "bin": {
+    "create-stencil-starter-pack": "index.js"
+  },
+  "keywords": [
+    "stencil-starter-pack",
+    "stenciljs",
+    "stencil",
+    "storybook",
+    "web components",
+    "cli",
+    "library"
+  ],
+  "author": "Rafael Bernal",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-json": "4.1.0",
+    "@types/node": "16.4.2",
+    "prettier": "2.3.2",
+    "rollup": "2.54.0",
+    "terser": "5.7.1",
+    "typescript": "4.3.5"
+  }
+}
